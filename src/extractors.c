@@ -1,12 +1,11 @@
 #include "extractors.h"
-#include "utils.h"
 
 int filecontent_init(FileContent *fc, const char *path) {
     struct stat fstat;
     if (stat(path, &fstat) != 0) {
         return 1; // Means there's no such file
     }
-    fc->fname = path;
+    fc->fname = basename((char *)path);
     fc->len = fstat.st_size;
 
     int fd = open(path, O_RDONLY);

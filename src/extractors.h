@@ -8,6 +8,7 @@
 #include <sys/stat.h>
 #include <sys/mman.h>
 #include <fcntl.h>
+#include <libgen.h>
 #include <unistd.h>
 #include "config.h"
 #include "utils.h"
